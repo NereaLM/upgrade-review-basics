@@ -25,3 +25,64 @@ console.log(moviesCategories)
 
 
 
+
+//ITERACIÓN #2: MIX FORS
+
+//Dado el siguiente javascript usa for of y for in para hacer la media del volumen de todos los sonidos favoritos que tienen los usuarios.
+
+
+const users = [
+    {
+        name: 'Manolo el del bombo',
+        favoritesSounds: {
+            waves: {format: 'mp3', volume: 50},
+            rain: {format: 'ogg', volume: 60},
+            firecamp: {format: 'mp3', volume: 80},
+        }
+    },
+    {
+        name: 'Mortadelo',
+
+
+
+
+        favoritesSounds: {
+            waves: {format: 'mp3', volume: 30},
+            shower: {format: 'ogg', volume: 55},
+            train: {format: 'mp3', volume: 60},
+        }
+    },
+    {
+        name: 'Super Lopez',
+        favoritesSounds: {
+            shower: {format: 'mp3', volume: 50},
+            train: {format: 'ogg', volume: 60},
+            firecamp: {format: 'mp3', volume: 80},
+        }
+    },
+    {
+        favoritesSounds: {
+            waves: {format: 'mp3',volume: 67},
+            wind: {format: 'ogg', volume: 35},
+            firecamp: {format: 'mp3',volume: 60},
+        }
+    },
+]
+
+let getMedia = (array) => {
+    let cantidad = 0
+    let total = 0
+    for(let user of array) {
+        for(let property in user.favoritesSounds) {
+            total += user.favoritesSounds[property].volume
+            cantidad++
+        }
+    }
+    let media = total / cantidad
+    return media
+
+}
+let result = getMedia(users)
+console.log("La media es: " + result)
+
+
