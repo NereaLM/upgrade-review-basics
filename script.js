@@ -42,10 +42,6 @@ const users = [
     },
     {
         name: 'Mortadelo',
-
-
-
-
         favoritesSounds: {
             waves: {format: 'mp3', volume: 30},
             shower: {format: 'ogg', volume: 55},
